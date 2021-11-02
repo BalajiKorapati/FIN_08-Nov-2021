@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>com.oracle.acs</groupId>
+        <artifactId>zt-ui-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <repositories>
+        <repository>
+            <id>itsp.repo</id>
+            <name>ITSP Platform Repository</name>
+            <url>http://acs-maven.us.oracle.com/content/groups/repo</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+       <dependency>
+            <groupId>com.oracle.acs</groupId>
+            <artifactId>zt-ui</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>report.oracle.ofs</groupId>
+            <artifactId>report-generation-fat</artifactId>
+            <version>6.10</version>
+        </dependency>
+    </dependencies>
+
+    <groupId>com.oracle</groupId>
+    <artifactId>FIN_INT</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>FIN_INT</name>
+    <description>Finance Tests for Saas</description>
+    <packaging>jar</packaging>
+
+
+</project>
