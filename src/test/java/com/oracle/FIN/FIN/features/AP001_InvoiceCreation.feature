@@ -24,8 +24,8 @@ Feature: Accounts Payable
   Background: 
     Given Setup Reporting for Finance
     
-    @AP001
-  Scenario Outline: AP001_InvoiceCreation
+@AP001
+  Scenario Outline:AP001_InvoiceCreation
     Given User logs into Fusion application
     When User navigates to Create Invoice page
     And Enter Invoice Header details "<BusinessUnit>", "<Supplier>", "<SupplierSite>", "<LegalEntity>", "<InvoiceNumber>", "<Amount>", "<Type>", "<Date>", "<PaymentTerms>", "<TermsDate>"

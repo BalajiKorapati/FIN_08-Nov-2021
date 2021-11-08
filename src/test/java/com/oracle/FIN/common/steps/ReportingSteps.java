@@ -20,20 +20,23 @@ public class ReportingSteps extends BrowserDriverUtil{
 	}
 
 	public static void setRpt(ReportGeneration report) {
+		System.out.println("2222222222222");
 		rpt.set(report);
+		System.out.println("rrrrrrrrrrrrrr");
 	}
 
 	@Given("^Setup Reporting for Finance$")
 	public void setup_Reporting_for_finance() throws Throwable {
-		
+		System.out.println("1hiiiiiiiiiiiiiiiiiiiiii");
 		getDriver().manage().window().maximize();
+		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		getDriver().manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		
 		String testCaseID;
 		String testCaseName;
 		cmnLib = new Common_Library();
-		
+		System.out.println("1hiiiiiiiiiiiiiiiiiiiiii");
 		if(scenarioName.contains("_")) {
 			testCaseID = scenarioName.substring(0, scenarioName.indexOf("_"));
 			testCaseName = scenarioName.substring(scenarioName.indexOf("_") + 1);

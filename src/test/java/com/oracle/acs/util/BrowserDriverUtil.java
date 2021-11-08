@@ -80,6 +80,7 @@ public class BrowserDriverUtil
             try{
                 PropertyUtils.loadProperties(new FileInputStream("src/test/resources/propertyFiles/default/system-default.properties"),true);
                 PropertyUtils.loadProperties(new FileInputStream("src/test/resources/propertyFiles/ofs-dev/dev.properties"),true);
+                System.out.println("Browser launched");
             }
             catch(IOException IOE)
             {
@@ -236,8 +237,8 @@ public class BrowserDriverUtil
         final EdgeOptions edgeOptions = new EdgeOptions();
         edgeOptions.setCapability("acceptInsecureCerts", true);
         edgeOptions.setCapability("acceptSslCerts", true);
-        //System.setProperty("webdriver.edge.driver", PropertyUtils.getProperty("ieDriverPath"));
-        WebDriverManager.edgedriver().setup();  // Added on 22-OCT as part of change
+        System.setProperty("webdriver.edge.driver", PropertyUtils.getProperty("ieDriverPath"));
+        //WebDriverManager.edgedriver().setup();  // Added on 22-OCT as part of change
         final WebDriver edgeDriver = (WebDriver)new EdgeDriver(edgeOptions);
         edgeDriver.manage().window().maximize();
         return edgeDriver;
@@ -262,14 +263,15 @@ public class BrowserDriverUtil
             BrowserDriverUtil.browser = System.getProperty("browserName");
             if (BrowserDriverUtil.browser == null) {
                 BrowserDriverUtil.browser = "chrome";
+//            	BrowserDriverUtil.browser = "ie";
             }
         }
         catch (Exception e1) {
             BrowserDriverUtil.loggerBrowser.info("FAILED TO READ BROWSER NAME.", (Throwable)e1);
         }
         try {
-          //  final String browser = BrowserDriverUtil.browser;
-            final String browser = "chromeHeadless";
+          final String browser = BrowserDriverUtil.browser;
+           // final String browser = "chromeHeadless";
 
 
             switch (browser) {
